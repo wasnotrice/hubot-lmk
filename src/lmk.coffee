@@ -93,19 +93,44 @@ formats = [
     "As good old #{quote.attr.split(" ")[0]} used to say, \"#{quote.text}\""
 ]
 
+remarks = [
+  "Ok."
+  "Permission is granted."
+  "It is allowed."
+  "Fine with me."
+  "I'll consider it."
+  "Perhaps."
+  "All right."
+  "No problem."
+  "I'll think about it."
+]
+
+actions = [
+  "makes it so"
+  "permits it"
+  "allows knowledge to transfer"
+  "waves wand"
+  "bows"
+]
+
 randomKnowledge = (msg) ->
   quote = msg.random knowledge
   format = msg.random formats
   format quote
 
+sendRandomKnowledge = (msg) ->
+  msg.send randomKnowledge(msg)
+
+replyOrEmoteRandomly = (msg) ->
+  if Math.random() < 0.5
+    msg.emote msg.random actions
+  else
+    msg.reply msg.random remarks
+  msg.message.finish()
+
 module.exports = (robot) ->
-  robot.respond /lmk/, (msg) ->
-    msg.reply "You may know."
-    # Mark as done so the `hear` handler doesn't also fire
-    msg.message.finish()
+  robot.respond /lmk/, replyOrEmoteRandomly
+  robot.respond /let (.*) know/, replyOrEmoteRandomly
 
-  robot.hear /lmk/, (msg) ->
-    msg.send randomKnowledge(msg)
-
-  robot.hear /let (.*) know/, (msg) ->
-    msg.send randomKnowledge(msg)
+  robot.hear /lmk/, sendRandomKnowledge
+  robot.hear /let (.*) know/, sendRandomKnowledge
