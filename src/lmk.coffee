@@ -1,17 +1,18 @@
 # Description
-#   Heckle "let me know" phraseology
+#   Respond when people say "let me know"
 #
 # Configuration:
 #   None
 #
 # Commands:
-#   let me know - Random comment about "let me know"
+#   lmk|let <someone> know - Random quote about knowledge
+#   hubot: lmk|let <someone> know - Cheeky comment
 #
 # Notes:
-#   <optional notes required for the script>
+#   None
 #
 # Author:
-#   Eric Watson[@<org>]
+#   Eric Watson
 
 knowledge = [
   {
