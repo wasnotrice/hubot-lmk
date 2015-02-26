@@ -68,7 +68,7 @@ knowledge = [
     attr: "Theodore Roosevelt"
   }
   {
-    text: "Four be the things I am wiser to know:\nIdleness, sorrow, a friend, and a foe."
+    text: "Four be the things I am wiser to know: \\ Idleness, sorrow, a friend, and a foe."
     attr: "Dorothy Parker"
   }
   {
@@ -86,7 +86,11 @@ formats = [
   (quote) ->
     "#{quote.text} (#{quote.attr})"
   (quote) ->
-    "As #{quote.attr} said: #{quote.text}"
+    "#{quote.text} #{quote.attr}"
+  (quote) ->
+    "#{quote.attr} once said, \"#{quote.text}\""
+  (quote) ->
+    "As good old #{quote.attr.split(" ")[0]} used to say, \"#{quote.text}\""
 ]
 
 randomKnowledge = (msg) ->
