@@ -1,7 +1,7 @@
 {
   "name": "hubot-lmk",
-  "description": "Heckle 'let me know' phraseology",
-  "version": "0.0.0",
+  "description": "Respond when people say 'let me know'",
+  "version": "0.1.0",
   "author": "Eric Watson <wasnotrice@gmail.com>",
   "license": "MIT",
 
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-lmk.git"
+    "url": "git://github.com/wasnotrice/hubot-lmk.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-lmk/issues"
+    "url": "https://github.com/wasnotrice/hubot-lmk/issues"
   },
 
   "dependencies": {
