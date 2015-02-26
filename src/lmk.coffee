@@ -82,9 +82,17 @@ knowledge = [
 
 ]
 
+formats = [
+  (quote) ->
+    "#{quote.text} (#{quote.attr})"
+  (quote) ->
+    "As #{quote.attr} said: #{quote.text}"
+]
+
 randomKnowledge = (msg) ->
   quote = msg.random knowledge
-  "#{quote.text} (#{quote.attr})"
+  format = msg.random formats
+  format quote
 
 module.exports = (robot) ->
   robot.respond /lmk/, (msg) ->
