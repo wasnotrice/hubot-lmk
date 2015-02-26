@@ -86,7 +86,7 @@ formats = [
   (quote) ->
     "#{quote.text} (#{quote.attr})"
   (quote) ->
-    "#{quote.text} #{quote.attr}"
+    "#{quote.text}  — #{quote.attr}"
   (quote) ->
     "#{quote.attr} once said, \"#{quote.text}\""
   (quote) ->
